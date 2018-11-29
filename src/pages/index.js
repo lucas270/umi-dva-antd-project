@@ -1,13 +1,23 @@
+import router from 'umi/router';
+import {Button} from "antd";
 import styles from './index.css';
 
 export default function() {
+  const testClick=()=>{
+    router.push('/testPage')
+  }
+  const btnClick=()=>{
+      router.push('/testPage3')
+  }
   return (
     <div className={styles.normal}>
       <div className={styles.welcome} />
-      <ul className={styles.list}>
-        <li>To get started, edit <code>src/pages/index.js</code> and save to reload.</li>
-        <li><a href="https://umijs.org/guide/getting-started.html">Getting Started</a></li>
-      </ul>
+      <Button type="primary" onClick={testClick} style={{marginRight:10}}>
+            model传递数据页
+        </Button>
+        <Button type="primary" onClick={btnClick}>
+            学习数据流
+        </Button>
     </div>
   );
 }

@@ -5,8 +5,8 @@
     "start": "cross-env PORT=8090 umi dev",
     "build": "umi build",
     "test": "umi test",
-    "lint": "eslint --ext .js src mock tests",
-    "precommit": "lint-staged"
+    "lint": "eslint --ext .js src",
+    "precommit": "npm run lint"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
@@ -21,12 +21,6 @@
     "cross-env": "^5.1.4",
     "umi": "^2.1.2",
     "umi-plugin-react": "^1.1.1"
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ]
   },
   "engines": {
     "node": ">=8.0.0"
