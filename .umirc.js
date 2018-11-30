@@ -15,4 +15,10 @@ export default {
       hardSource: false,
     }],
   ],
+   // 修改antd主题样式
+  // theme: {
+  //   "@primary-color": "#30b767", // 全局主色
+  //   "@link-color": #1890ff, // 链接色
+  //   "@success-color": #52c41a, // 成功色
+  // }
 }
