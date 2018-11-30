@@ -1,4 +1,4 @@
-
+/* 这是全局样式，如果需要更改antd默认样式可以在这里改，不过同时会全部更改，如果只是希望某个页面改，可以参考testPage的css */
 html, body, #root {
   height: 100%;
 }
@@ -6,3 +6,7 @@ html, body, #root {
 body {
   margin: 0;
 }
+/* 更改antd默认样式 */
+/*.ant-btn-primary {
+  color: #000;
+} */

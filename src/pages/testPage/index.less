@@ -1,5 +1,14 @@
 // umi默认是支持less的
 @mr10: 10px;
 .btn{
-    margin-right: @mr10;
+    margin-right: @mr10; 
+}
+.btnColor{
+    color:red;
+}
+// override-ant-btn-primary这个是标识，名字任意起，不过一般起override-...，语义化点，让人知道是覆盖antd默认样式的，这样包装的样式只会作用于被包装的元素，不会全局更改
+.override-ant-btn-primary{
+    :global(.ant-btn-primary){
+        color: #000;
+      }
 }
