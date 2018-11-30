@@ -1,3 +1,4 @@
+import React from "react";
 import router from 'umi/router';
 import {Button} from "antd";
 import styles from './index.css';
@@ -10,7 +11,7 @@ export default function() {
       router.push('/testPage3')
   }
   return (
-    <div className={styles.normal}>
+    <React.Fragment >
       <div className={styles.welcome} />
       <Button type="primary" onClick={testClick} style={{marginRight:10}}>
             model传递数据页
@@ -18,6 +19,6 @@ export default function() {
         <Button type="primary" onClick={btnClick}>
             学习数据流
         </Button>
-    </div>
+    </React.Fragment>
   );
 }
