@@ -10,3 +10,7 @@ body {
 /*.ant-btn-primary {
   color: #000;
 } */
+
+.ant-layout{
+  height: 100vh;
+}

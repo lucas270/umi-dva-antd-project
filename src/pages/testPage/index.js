@@ -1,6 +1,6 @@
 import React from 'react'; // 这行必须写，不然报错，可能是eslint搞事情。
-import { connect } from 'dva';
-import classNames from 'classNames';
+import { connect } from 'dva'; // connect用于组件连接models层数据
+import classNames from 'classNames'; // 需要多个class时或要逻辑计算后决定是否要class，可以用这个插件
 import {
   Form, Button, Row, Col,
 } from 'antd';
