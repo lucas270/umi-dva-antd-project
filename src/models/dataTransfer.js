@@ -28,6 +28,13 @@ export default {
       const dataCars = state.dataCarsBackup.slice(0);
       return { ...state, dataCars };
     },
+    // 删除数据
+    delData(state, { name }) {
+      const dataCars = state.dataCars.slice(0);
+      const index = dataCars.findIndex(it => it.name === name);
+      dataCars.splice(index, 1);
+      return { ...state, dataCars };
+    },
   },
   subscriptions: {
     setup({ dispatch, history }) {
