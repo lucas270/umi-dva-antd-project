@@ -1,5 +1,8 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Link } from 'dva/router';
+import {
+  Layout, Menu, Icon,
+} from 'antd';
 import Header from './header';
 import styles from './index.css';
 
@@ -15,19 +18,33 @@ function BasicLayout(props) {
           trigger={null}
           collapsible
         >
-
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1">
-              <Icon type="user" />
-              <span>nav 1</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <span>nav 2</span>
-            </Menu.Item>
+            <Menu.SubMenu
+              key="sub1"
+              title={(
+                <span>
+                  <Icon type="smile" />
+                  <span>数据传递</span>
+                </span>)}
+            >
+              <Menu.Item key="1">
+                <Link to="testPage">
+                  <Icon type="video-camera" />
+                  <span>models传递数据</span>
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="2">
+                <Link to="dataTransfer">
+                  <Icon type="user" />
+                  <span>学习数据流</span>
+                </Link>
+              </Menu.Item>
+            </Menu.SubMenu>
             <Menu.Item key="3">
-              <Icon type="upload" />
-              <span>nav 3</span>
+              <Link to="/">
+                <Icon type="upload" />
+                <span>首页</span>
+              </Link>
             </Menu.Item>
           </Menu>
         </Sider>
