@@ -17,9 +17,7 @@ export default function () {
         <Button type="primary" onClick={testClick} style={{ marginRight: 10 }}>
             model传递数据页
         </Button>
-        <Button type="primary" onClick={btnClick}>
-            学习数据流
-        </Button>
+        <Button type="primary" onClick={btnClick}>学习数据流</Button>
       </div>
     </React.Fragment>
   );
