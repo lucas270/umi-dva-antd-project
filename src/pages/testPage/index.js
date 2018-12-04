@@ -92,7 +92,7 @@ function mapStateToProps(state) {
 // 代码
 // }
 
-// connect方法用来连接models层的state数据，接受2个参数(都是方法)，第一个mapStateToProps，第二个mapDispatchToProps
+// connect方法用来连接models层的state数据，参数常用的有2个，是第一个mapStateToProps，第二个mapDispatchToProps
 // mapStateToProps按字面意思：把models层state数据变为组件的props
 // mapDispatchToProps：用了此方法，dispatch只会在此方法里。不写该参数，dispatch会作为组件的props。(我平常用几乎不写该方法)
 // export default connect(mapStateToProps, mapDispatchToProps)(TestPage);
