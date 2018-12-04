@@ -15,15 +15,18 @@ const formItemLayout = {
 
 const DataModal = (props) => {
   const {
-    isVisible, form, enterModal, cancelModal,
+    isVisible, form, enterModal, cancelModal, record,
   } = props;
-  const { getFieldDecorator, validateFields } = form;
+  const { name, car, drivingAge } = record;
+  const { getFieldDecorator, validateFields, resetFields } = form;
 
   // 子组件向父组件传参，通过回调函数
   const handleOk = () => {
     validateFields((err, values) => {
       if (!err) {
         enterModal(values);
+        // 确定后清空表单值
+        resetFields();
       }
     });
   };
@@ -43,13 +46,13 @@ const DataModal = (props) => {
     >
       <Form>
         <FormItem {...formItemLayout} label="用户">
-          { getFieldDecorator('name', { initialValue: '' })(
+          { getFieldDecorator('name', { initialValue: name })(
             <Input placeholder="用户名" />,
           )
             }
         </FormItem>
         <FormItem {...formItemLayout} label="车品牌">
-          { getFieldDecorator('car', { initialValue: '' })(
+          { getFieldDecorator('car', { initialValue: car })(
             <Select>
               <Option value="dazhong">大众</Option>
               <Option value="baoma">宝马</Option>
@@ -60,7 +63,7 @@ const DataModal = (props) => {
             }
         </FormItem>
         <FormItem {...formItemLayout} label="驾驶年龄">
-          { getFieldDecorator('drivingAge', { initialValue: '', rules: [{ required: true, message: '驾龄不能为空' }, { max: 2, pattern: '^[0-9]*$', message: '只能是数字且不能超过2位数' }] })(
+          { getFieldDecorator('drivingAge', { initialValue: drivingAge, rules: [{ required: true, message: '驾龄不能为空' }, { max: 2, pattern: '^[0-9]*$', message: '只能是数字且不能超过2位数' }] })(
             <Input placeholder="输入驾驶年龄" />,
           )
             }

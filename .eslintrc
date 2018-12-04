@@ -39,7 +39,13 @@
     "import/no-unresolved": [0],
     "require-yield": [1],
     "max-len":[1,{"code":200}],
-    "no-unused-vars":[1]
+    "no-unused-vars":[1],
+    "object-curly-newline":"off",
+    "react/destructuring-assignment":[0],
+    "prefer-destructuring":"off",
+    "no-plusplus":"off",
+    "array-callback-return":[1],
+    "no-shadow":[1]
   },
   "parserOptions": {
     "ecmaFeatures": {

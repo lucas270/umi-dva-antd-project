@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import {
-  Table, Popconfirm, Divider,
-} from 'antd';
+import { Table, Popconfirm, Divider } from 'antd';
 import DataModal from './DataModal';
 
 
 class TableList extends Component {
   state={
     visible: false, // 弹框默认隐藏
+    record: {},
+  }
+
+  renderCar=(text) => {
+    let car = '';
+    switch (text) {
+      case 'dazhong':
+        car = '大众';
+        break;
+      case 'baoma':
+        car = '宝马';
+        break;
+      case 'luhu':
+        car = '路虎';
+        break;
+      case 'benci':
+        car = '奔驰';
+        break;
+      default:
+        car = '';
+    }
+    return car;
   }
 
   // 编辑
   onEdit = record => () => {
-    this.setState({ visible: true });
+    this.setState({ visible: true, record });
   }
 
   // 删除
@@ -28,8 +48,9 @@ class TableList extends Component {
   enterModal =(values) => {
     const { dispatch } = this.props;
     dispatch({
-      type: 'dataTransfer/addData',
+      type: 'dataTransfer/editData',
       carData: values,
+      id: this.state.record.id,
     });
     this.setState({ visible: false });
   }
@@ -40,7 +61,7 @@ class TableList extends Component {
   }
 
   render() {
-    const { visible } = this.state;
+    const { visible, record } = this.state;
     const { dataSource } = this.props;
 
     // 表格列定义
@@ -52,6 +73,9 @@ class TableList extends Component {
     {
       title: '驾驶车辆',
       dataIndex: 'car',
+      render: (text) => {
+        return this.renderCar(text);
+      },
     },
     {
       title: '驾驶年龄',
@@ -82,8 +106,8 @@ class TableList extends Component {
           bordered
           locale={{ emptyText: '木有数据哦(⊙o⊙)' }}
         />
-        {/* DataModal组件中的isVisible,cancelModal,enterModal是自定义属性，名字随便起，它们会变成组件DataModal的props */}
-        <DataModal isVisible={visible} cancelModal={this.cancelModal} enterModal={this.enterModal} />
+        {/* DataModal组件中的isVisible,cancelModal...是自定义属性，名字随便起，它们会变成组件DataModal的props */}
+        <DataModal isVisible={visible} cancelModal={this.cancelModal} enterModal={this.enterModal} record={record} />
       </div>
 
     );
