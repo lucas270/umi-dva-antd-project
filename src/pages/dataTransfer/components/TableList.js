@@ -69,6 +69,7 @@ class TableList extends Component {
       title: '姓名',
       dataIndex: 'name', // 与数据对象的key同名时，会自动遍历出数据
       // key:"name", //每行应有唯一的key或rowkey，否则有警告，有rowkey且唯一时可以忽略，如果不唯一或没有rowkey可以指定key
+      render: text => <div dangerouslySetInnerHTML={{ __html: text }} />, // dangerouslySetInnerHTML可以正确渲染HTML
     },
     {
       title: '驾驶车辆',

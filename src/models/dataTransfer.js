@@ -63,8 +63,8 @@ export default {
           const dataCars = [
             { id: 1, name: '张三', car: 'baoma', drivingAge: '2' },
             { id: 2, name: '张望', car: 'baoma', drivingAge: '3' },
-            { id: 3, name: '举栗子', car: 'dazhong', drivingAge: '6' },
-            { id: 4, name: '陈大师', car: 'luhu', drivingAge: '4' },
+            { id: 3, name: '<span style="color:red;font-size:18px">举栗子<span>', car: 'dazhong', drivingAge: '6' },
+            { id: 4, name: '<span style=\'color:green\'>陈大师<span>', car: 'benci', drivingAge: '4' },
           ];
           dispatch({ type: 'showData', dataCars });
         }
