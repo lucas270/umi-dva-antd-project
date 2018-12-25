@@ -11,6 +11,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "antd": "^3.11.6",
     "classnames": "^2.2.6",
     "react-document-title": "^2.0.3"
   },
